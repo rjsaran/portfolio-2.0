@@ -33,10 +33,6 @@ export default function ContactForm({
   };
   return (
     <form className="flex w-full flex-col gap-6 py-8 md:w-[470px] md:py-0">
-      <p>
-        If you have any questions or concerns, please don't hesitate to contact
-        me.
-      </p>
       <FormGroup
         name="name"
         label="Your Name:"

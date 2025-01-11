@@ -27,17 +27,15 @@ export default class MyDocument extends Document {
           {/* og meta */}
           <meta
             property="og:title"
-            content="Liplan Lekipising - Software Engineer"
+            content="Ramjeet Saran - Software Engineer"
           />
-          <meta property="og:site_name" content="Liplan Lekipising Portfolio" />
+          <meta property="og:site_name" content="Ramjeet Saran Portfolio" />
           <meta property="og:locale" content="en_US" />
-          <meta property="og:url" content="https://lekipising.com" />
           <meta
             property="og:image"
             content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1697209158/liplan/Screenshot_from_2023-10-13_17-59-04_vzuiqg.png"
           />
           <meta property="og:type" content="summary" />
-          <link rel="canonical" href="https://lekipising.com" />
           <meta
             property="og:description"
             content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
@@ -45,22 +43,6 @@ export default class MyDocument extends Document {
           <meta
             name="description"
             content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta property="twitter:domain" content="https://lekipising.com" />
-          <meta property="twitter:url" content="https://lekipising.com" />
-          <meta name="twitter:creator" content="@lekipising" />
-          <meta
-            name="twitter:title"
-            content="Liplan Lekipising - Software Engineer"
-          />
-          <meta
-            name="twitter:description"
-            content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
-          />
-          <meta
-            name="twitter:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1697209158/liplan/Screenshot_from_2023-10-13_17-59-04_vzuiqg.png"
           />
           {/* pwa tags */}
           <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -70,21 +52,18 @@ export default class MyDocument extends Document {
           />
           <meta
             name="apple-mobile-web-app-title"
-            content="Liplan Lekipising - Software Engineer"
+            content="Ramjeet Saran - Software Engineer"
           />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
             name="application-name"
-            content="Liplan Lekipising - Software Engineer"
+            content="Ramjeet Saran - Software Engineer"
           />
           <meta name="format-detection" content="telephone=no" />
           <meta name="msapplication-TileColor" content="#011627" />
           <meta name="msapplication-tap-highlight" content="no" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="manifest" href="/manifest.json" />
-          {
-            // TODO: add iOS splash screens
-          }
         </Head>
         <body>
           <Main />

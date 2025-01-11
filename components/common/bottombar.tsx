@@ -4,14 +4,15 @@ import React from "react";
 import Twitter from "../../assets/twitter.svg";
 import LinkedIn from "../../assets/linkedin.svg";
 import Github from "../../assets/github.svg";
+import { personalData } from "../../utils/data/personal-data";
 
 export default function BottomBar() {
   return (
-    <footer className="fixed inset-x-[5vw] bottom-[5vh] hidden h-[55px] items-center justify-between rounded-b-[5px] border-[1px] border-t-[1px] border-gray-200 bg-dark-300 px-8 pl-2 text-gray-100 md:flex  md:pl-8">
+    <footer className="fixed inset-x-[5vw] bottom-[5vh] hidden h-[55px] items-center justify-between rounded-b-[5px] border-[1px] border-t-[1px] border-gray-200 bg-dark-300 px-8 pl-2 text-gray-100 md:flex md:pl-8">
       <div className="flex h-full items-center">
         <span className="pr-2">Connect with me</span>
         <a
-          href="https://twitter.com/lekipising"
+          href={personalData.twitter}
           target="_blank"
           rel="noreferrer"
           className="flex h-full items-center justify-center border-l-[1px] border-l-gray-200 px-4"
@@ -24,11 +25,12 @@ export default function BottomBar() {
             className="cursor-pointer"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </a>
         <a
-          href="https://www.linkedin.com/in/liplan0lekipising/"
+          href={personalData.linkedIn}
           target="_blank"
           rel="noreferrer"
           className="flex h-full items-center justify-center border-x-[1px] border-x-gray-200 px-4"
@@ -41,29 +43,32 @@ export default function BottomBar() {
             className="cursor-pointer"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </a>
       </div>
-
-      <a
-        href="https://github.com/lekipising"
-        target="_blank"
-        rel="noreferrer"
-        className="flex h-full cursor-pointer items-center gap-2 border-x-[1px] border-x-gray-200 px-4"
-      >
-        <span className="cursor-pointer">@lekipising</span>
-        <Image
-          src={Github}
-          height="30"
-          width="30"
-          alt="Github"
-          className="cursor-pointer"
-          style={{
-            maxWidth: "100%",
-            height: "auto"
-          }} />
-      </a>
+      <div className="flex h-full items-center">
+        <span className="pr-2">Github</span>
+        <a
+          href={personalData.github}
+          target="_blank"
+          rel="noreferrer"
+          className="flex h-full cursor-pointer items-center gap-2 border-x-[1px] border-x-gray-200 px-4"
+        >
+          <Image
+            src={Github}
+            height="30"
+            width="30"
+            alt="Github"
+            className="cursor-pointer"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
+          />
+        </a>
+      </div>
     </footer>
   );
 }

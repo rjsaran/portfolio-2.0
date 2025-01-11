@@ -19,16 +19,8 @@ export default function SuccessMessage({
         className="w-max rounded-[8px] bg-dark-100 px-4 py-2"
         onClick={() => toggleNewForm()}
       >
-        send-new-message
+        Send message
       </button>
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://github.com/lekipising"
-        className="w-max rounded-[8px] bg-dark-300 px-4 py-2 text-sm"
-      >
-        View my GitHub profile
-      </a>
     </div>
   );
 }

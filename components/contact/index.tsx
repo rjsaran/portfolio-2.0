@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import ShowRealTimeMessage from "./code";
 import ContactForm from "./form";
 import MobileSocials from "./mobileContact";
 import SuccessMessage from "./success";
@@ -7,9 +6,11 @@ import SuccessMessage from "./success";
 import { motion } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
 
-export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
-
-
+export default function ContactMe({
+  setIsVisible,
+}: {
+  setIsVisible: () => void;
+}) {
   // Call the useIntersect hook and receive the setNode and entry variables
   const { entry, setNode } = useIntersect({
     root: null, // The element used as the viewport for checking visibility, null means the browser viewport
@@ -29,10 +30,11 @@ export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
     }
   }, [entry?.isIntersecting]);
 
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [userInput, setUserInput] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const [messageReceived, setMessageReceived] = useState("");
 
@@ -41,22 +43,20 @@ export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
   const sendMessage = async () => {
     setLoading(true);
     try {
-      const data = {
-        name,
-        email,
-        message,
-      };
       await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(userInput),
       });
       setLoading(false);
+
       // clear form
-      setName("");
-      setEmail("");
-      setMessage("");
-      setMessageReceived(name);
+      setUserInput({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setMessageReceived(userInput.name);
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -65,11 +65,11 @@ export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
 
   return (
     <section
-    ref={observeRef}
-      id="_contact-me"
-      className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-between rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-32 md:max-w-[70vw] md:flex-row md:pb-8"
+      ref={observeRef}
+      id="Contact Me"
+      className="relative m-auto my-20 mb-32 flex h-max w-full max-w-[85vw] flex-col items-center justify-center rounded-[15px] bg-dark-100/20 p-8 pb-64 md:my-32 md:max-w-[70vw] md:flex-row md:pb-8"
     >
-      <div className="absolute left-1/2 -top-16 w-[185px] -translate-x-1/2 md:-top-12">
+      <div className="absolute -top-16 left-1/2 w-[185px] -translate-x-1/2 md:-top-12">
         <motion.h2 className="heading-gradient text-lg font-semibold text-white">
           Send me a message
         </motion.h2>
@@ -87,17 +87,15 @@ export default function ContactMe({setIsVisible}: {setIsVisible: () => void}) {
         />
       ) : (
         <ContactForm
-          receiveName={(val) => setName(val)}
-          receiveEmail={(val) => setEmail(val)}
-          receiveMessage={(val) => setMessage(val)}
+          receiveName={(val) => setUserInput({ ...userInput, name: val })}
+          receiveEmail={(val) => setUserInput({ ...userInput, email: val })}
+          receiveMessage={(val) => setUserInput({ ...userInput, message: val })}
           submitMessage={() => {
             sendMessage();
           }}
           loading={loading}
         />
       )}
-      <div className="absolute left-1/2 top-[40%] hidden h-[50%] w-[1px] -translate-y-1/2 -translate-x-1/2 heading-gradient-underline md:block" />
-      <ShowRealTimeMessage name={name} email={email} message={message} />
       <MobileSocials />
     </section>
   );

@@ -5,9 +5,10 @@ import NavBar from "../components/common/navbar";
 
 import AboutMe from "../components/about";
 import ContactMe from "../components/contact";
-import Projects from "../components/projects";
+import Experience from "../components/experience";
+import Skills from "../components/skills";
+
 import BottomBar from "../components/common/bottombar";
-import Experience from "../components/projects/experience";
 
 import { useScroll, useTransform } from "framer-motion";
 
@@ -45,10 +46,10 @@ export default function Home() {
       yRange.onChange(() => {
         setCurrentPercent(Math.trunc(yRange.current));
       }),
-    [yRange]
+    [yRange],
   );
 
-  const [activeSection, setActiveSection] = useState("hello");
+  const [activeSection, setActiveSection] = useState("Hello");
 
   return (
     <>
@@ -74,11 +75,11 @@ export default function Home() {
         <div className="fixed inset-x-0 z-[100] hidden px-[5vw] md:block">
           <NavBar activeSection={activeSection} />
         </div>
-        <FirstScreen setIsVisible={() => setActiveSection("_hello")} />
-        <AboutMe setIsVisible={() => setActiveSection("_about-me")} />
-        <Experience />
-        <Projects setIsVisible={() => setActiveSection("_projects")} />
-        <ContactMe setIsVisible={() => setActiveSection("_contact-me")} />
+        <FirstScreen setIsVisible={() => setActiveSection("Hello")} />
+        <AboutMe setIsVisible={() => setActiveSection("About Me")} />
+        <Skills setIsVisible={() => setActiveSection("Skills")} />
+        <Experience setIsVisible={() => setActiveSection("Experience")} />
+        <ContactMe setIsVisible={() => setActiveSection("Contact Me")} />
         <BottomBar />
         <div
           style={{ height: currentPrecent - 10 + "%" }}

@@ -4,9 +4,9 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Liplan",
+  "name": "Ramjeet Saran",
   "orientation": "portrait",
-  "short_name": "Liplan",
+  "short_name": "rjsaran",
   "description": "I craft interactive and beautiful web apps, and I love what I do. View my projects",
   "icons": [
     {

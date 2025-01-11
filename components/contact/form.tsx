@@ -32,11 +32,14 @@ export default function ContactForm({
     //
   };
   return (
-    <form className="flex w-full flex-col gap-6 py-8 md:w-[370px] md:py-0">
+    <form className="flex w-full flex-col gap-6 py-8 md:w-[470px] md:py-0">
+      <p>
+        If you have any questions or concerns, please don't hesitate to contact
+        me.
+      </p>
       <FormGroup
         name="name"
-        placeholder="Enter your name"
-        label="_name:"
+        label="Your Name:"
         value={name}
         setValue={(val) => {
           setName(val);
@@ -45,9 +48,8 @@ export default function ContactForm({
       />
       <FormGroup
         name="email"
-        placeholder="Enter your email"
         type="email"
-        label="_email:"
+        label="Your Email:"
         value={email}
         onBlur={() => setEmailValid(validateEmail(email))}
         customStyle={`${email.length > 0 && !emailValid ? "error" : ""}`}
@@ -58,9 +60,8 @@ export default function ContactForm({
       />
       <FormGroup
         name="message"
-        placeholder="Enter your message"
         type="textarea"
-        label="_message:"
+        label="Your Message:"
         value={message}
         setValue={(val) => {
           setMessage(val);
@@ -74,7 +75,7 @@ export default function ContactForm({
         className="m-auto w-max rounded-[8px] bg-dark-100 px-4 py-2 md:m-0 md:mt-8"
         disabled={!name || !email || !message || loading}
       >
-        {loading ? "Sending..." : "submit-message"}
+        {loading ? "Sending..." : "Send Message"}
       </motion.button>
     </form>
   );
@@ -92,7 +93,7 @@ function FormGroup({
 }: {
   name: string;
   type?: string;
-  placeholder: string;
+  placeholder?: string;
   label: string;
   value: string;
   setValue: (val: string) => void;

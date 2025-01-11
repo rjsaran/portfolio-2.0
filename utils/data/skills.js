@@ -1,0 +1,17 @@
+export const skillsData = [
+  "Node JS",
+  "Javascript",
+  "Django",
+  "Nest JS",
+  "Typescript",
+  "React",
+  "Next JS",
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "Git",
+  "AWS",
+  "Docker",
+  "Nginx",
+  "Figma",
+];

@@ -20,7 +20,11 @@ const nextConfig = withPWA({
       {
         protocol: "https",
         hostname: "maskani-app.vercel.app",
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
     ],
   },
 });

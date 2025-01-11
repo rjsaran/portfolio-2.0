@@ -5,6 +5,7 @@ import Twitter from "../../assets/twitter.svg";
 import LinkedIn from "../../assets/linkedin.svg";
 
 import { motion } from "framer-motion";
+import { personalData } from "../../utils/data/personal-data";
 
 export default function MobileSocials() {
   return (
@@ -12,7 +13,7 @@ export default function MobileSocials() {
       <a
         target="_blank"
         rel="noreferrer"
-        href="https://github.com/lekipising"
+        href={personalData.github}
         className="flex items-center text-center text-[15px] underline"
       >
         Check out more of my projects on GitHub
@@ -27,7 +28,7 @@ export default function MobileSocials() {
           transition={{ ease: "easeIn", duration: 0.2 }}
           target="_blank"
           rel="noreferrer"
-          href="https://twitter.com/lekipising"
+          href={personalData.twitter}
           className="flex h-full items-center justify-center px-4"
         >
           <Image
@@ -38,15 +39,16 @@ export default function MobileSocials() {
             className="cursor-pointer"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </motion.a>
         <motion.a
           whileTap={{ scale: 1.1 }}
           transition={{ ease: "easeIn", duration: 0.2 }}
           target="_blank"
           rel="noreferrer"
-          href="https://www.linkedin.com/in/liplan0lekipising/"
+          href={personalData.linkedIn}
           className="flex h-full items-center justify-center px-4"
         >
           <Image
@@ -57,8 +59,9 @@ export default function MobileSocials() {
             className="cursor-pointer"
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </motion.a>
       </div>
     </div>

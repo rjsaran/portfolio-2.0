@@ -4,11 +4,6 @@ import { motion } from "framer-motion";
 import useIntersect from "../../utils/useIntersectionObserver";
 import { experienceData } from "../../utils/data/experience";
 
-export interface Technology {
-  svg?: string;
-  text: string;
-}
-
 export interface IExperience {
   company: string;
   title: string;

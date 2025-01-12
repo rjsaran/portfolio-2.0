@@ -1,6 +1,5 @@
 export const experienceData = [
   {
-    id: 5,
     title: "Team Lead",
     company: "SalaryBox",
     location: "Gurugram, India",
@@ -17,7 +16,6 @@ export const experienceData = [
     technologies: [],
   },
   {
-    id: 4,
     title: "Lead Engineer",
     company: "RocketPay",
     location: "Bengaluru, India",
@@ -32,7 +30,6 @@ export const experienceData = [
     technologies: [],
   },
   {
-    id: 3,
     title: "Software Development Engineer III",
     company: "Khatabook",
     location: "Bengaluru, India",
@@ -48,7 +45,6 @@ export const experienceData = [
     technologies: [],
   },
   {
-    id: 2,
     title: "Senior Software Engineer",
     company: "Paytm",
     location: "Noida, India",
@@ -64,7 +60,6 @@ export const experienceData = [
     technologies: [],
   },
   {
-    id: 1,
     title: "Software Engineer",
     company: "Paytm",
     location: "Noida, India",
@@ -76,6 +71,6 @@ export const experienceData = [
       "Implemented a robust scaling solution for the promo code datastore using sharded Redis, effectively managing 250 million active promo codes.",
       "Developed a bulk mail and SMS sender for large-scale messaging, utilizing RabbitMQ, Redis, and Node.js.",
     ],
-    technologies: [{ text: "Node JS" }, { text: "MySQL" }, { text: "Redis" }],
+    technologies: [],
   },
 ];

@@ -1,11 +1,11 @@
 export const personalData = {
   id: "rjsaran",
   name: "RAMJEET SARAN",
-  designation: "Software Developer",
+  designation: "Software Engineer",
   description: [
-    "I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude.",
-    "I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world.",
-    "My core skill is based on JavaScript and I love to do most of the things using JavaScript.",
+    "I'm a Backend Engineer with 9+ years of experience delivering scalable, resilient systems and elegant solutions to complex problems.",
+    "I specialize in building systems from scratch, optimizing high-traffic processes, and translating business needs into impactful outcomes.",
+    "A quick learner and problem solver, I thrive on collaborating with global teams and delivering high-quality results.",
   ],
   email: "saran.ramjeet@gmail.com",
   phone: "+919650172140",

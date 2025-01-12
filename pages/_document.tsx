@@ -18,11 +18,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
-          <link
-            rel="preload"
-            href="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,f_auto,h_800/v1697208403/liplan/v4_x34zg3.jpg"
-            as="image"
-          />
           {/* Meta Description = Search Engines, OG Descriptions = Social media */}
           {/* og meta */}
           <meta
@@ -31,10 +26,6 @@ export default class MyDocument extends Document {
           />
           <meta property="og:site_name" content="Ramjeet Saran Portfolio" />
           <meta property="og:locale" content="en_US" />
-          <meta
-            property="og:image"
-            content="https://res.cloudinary.com/dpnbddror/image/upload/c_scale,w_1200/v1697209158/liplan/Screenshot_from_2023-10-13_17-59-04_vzuiqg.png"
-          />
           <meta property="og:type" content="summary" />
           <meta
             property="og:description"

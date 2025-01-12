@@ -20,7 +20,7 @@ export default function NavBar({ activeSection }: { activeSection: string }) {
           onClick={() => scrollIntoId("Hello")}
           className="heading-gradient cursor-pointer text-lg font-bold leading-[120.4%] tracking-wider transition-all duration-150 ease-in"
         >
-          @{personalData.id}
+          {`{${personalData.id}}`}
         </span>
       </nav>
       <nav className="hidden h-full items-center gap-2 md:flex">

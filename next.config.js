@@ -15,14 +15,6 @@ const nextConfig = withPWA({
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-      {
-        protocol: "https",
-        hostname: "maskani-app.vercel.app",
-      },
-      {
-        protocol: "https",
         hostname: "media.licdn.com",
       },
     ],

@@ -47,8 +47,7 @@ export default function FirstScreen({
           </p>
         </div>
         <div className="flex flex-col gap-2 italic text-gray-100 md:gap-1">
-          <p>Want to know more about me?</p>
-          <p>Scroll down and let me take you on a tour!</p>
+          <p>Want to know more about me? Scroll down</p>
         </div>
       </div>
       <div className="pic-shadow relative z-50 hidden h-[25vw] w-[25vw] overflow-hidden rounded-full outline outline-green md:block">

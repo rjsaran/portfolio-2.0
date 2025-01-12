@@ -10,14 +10,13 @@ export interface Technology {
 }
 
 export interface IExperience {
-  id: number;
   company: string;
   title: string;
   duration: string;
   type: string;
   location: string;
   description: string[];
-  technologies: Technology[];
+  technologies: string[];
 }
 
 export default function Experience({
@@ -132,21 +131,6 @@ function OneExperience({
   );
 }
 
-function OneTechnology({ tech }: { tech: Technology }) {
-  return (
-    <div className="flex items-center gap-1">
-      {/* <Image
-        src={tech.svg}
-        height="20"
-        width="20"
-        quality={100}
-        alt={tech.text}
-        style={{
-          maxWidth: "100%",
-          height: "auto",
-        }}
-      /> */}
-      <span className="text-[13px] text-white xl:text-[10px]">{tech.text}</span>
-    </div>
-  );
+function OneTechnology({ tech }: { tech: string }) {
+  return <span className="text-[13px] text-white xl:text-[10px]">{tech}</span>;
 }

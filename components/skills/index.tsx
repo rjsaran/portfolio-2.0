@@ -51,7 +51,7 @@ export default function Skills({ setIsVisible }: { setIsVisible: () => void }) {
             key={id}
           >
             <div className="h-full w-full rounded-lg border">
-              <div className="flex flex-col items-center justify-center gap-3 p-6">
+              <div className="flex flex-col items-center justify-center gap-3 p-2">
                 <div className="h-8 sm:h-10">
                   <Image
                     src={`/svg/skills/${skill.toLowerCase().replace(/\s/g, "")}.svg`}

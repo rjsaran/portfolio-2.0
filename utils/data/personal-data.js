@@ -8,10 +8,9 @@ export const personalData = {
     "A quick learner and problem solver, I thrive on collaborating with global teams and delivering high-quality results.",
   ],
   email: "saran.ramjeet@gmail.com",
-  phone: "+919650172140",
+  phone: "+91-9650172140",
   address: "Jodhpur, Rajasthan, India - 342606 ",
-  profile:
-    "https://media.licdn.com/dms/image/v2/C4D03AQG3zZyzf8lDTQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1649691932760?e=1741824000&v=beta&t=ygBJrcz-zWDvLoWCbytRVvSRVJRZsjN704dF3hhtxlA",
+  profile: "/profile.png",
   github: "https://github.com/rjsaran",
   facebook: "https://www.facebook.com/rjsaran94/",
   linkedIn: "https://www.linkedin.com/in/rjsaran/",

@@ -1,15 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withPWA = require("next-pwa")({
-  dest: "public",
-  register: true,
-  skipWaiting: false,
-  disable: process.env.NODE_ENV === "development",
-});
-
-const nextConfig = withPWA({
-  swcMinify: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -19,6 +9,6 @@ const nextConfig = withPWA({
       },
     ],
   },
-});
+};
 
 module.exports = nextConfig;

@@ -35,26 +35,10 @@ export default class MyDocument extends Document {
             name="description"
             content="I craft interactive and beautiful web apps, and I love what I do. With every line of code, I strive to make the web a better place. View my projects"
           />
-          {/* pwa tags */}
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta
-            name="apple-mobile-web-app-status-bar-style"
-            content="default"
-          />
-          <meta
-            name="apple-mobile-web-app-title"
-            content="Ramjeet Saran - Software Engineer"
-          />
-          <meta name="mobile-web-app-capable" content="yes" />
-          <meta
-            name="application-name"
-            content="Ramjeet Saran - Software Engineer"
-          />
           <meta name="format-detection" content="telephone=no" />
           <meta name="msapplication-TileColor" content="#011627" />
           <meta name="msapplication-tap-highlight" content="no" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/favicon.svg" />
         </Head>
         <body>
           <Main />

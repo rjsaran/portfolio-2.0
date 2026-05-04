@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import { motion } from "framer-motion";
 import { personalData } from "../../utils/data/personal-data";
@@ -11,13 +11,22 @@ export const scrollIntoId = (id: string) => {
   }
 };
 
-export default function NavBar({ activeSection }: { activeSection: string }) {
+export default function NavBar({
+  activeSection,
+  onNavigate,
+}: {
+  activeSection: string;
+  onNavigate?: Dispatch<SetStateAction<string>>;
+}) {
   return (
     <header className="nav-blur relative m-auto flex h-[55px] w-full items-center rounded-[8px] border-[1px] border-gray-200 pl-2 text-gray-100 md:pl-8">
       <nav className="md:w-[10vw]">
         <span
           role="link"
-          onClick={() => scrollIntoId("Hello")}
+          onClick={() => {
+            scrollIntoId("Hello");
+            onNavigate?.("Hello");
+          }}
           className="heading-gradient cursor-pointer text-lg font-bold leading-[120.4%] tracking-wider transition-all duration-150 ease-in"
         >
           {`{${personalData.id}}`}
@@ -28,26 +37,37 @@ export default function NavBar({ activeSection }: { activeSection: string }) {
           text="Hello"
           delay={1}
           isActive={activeSection === "Hello"}
+          onNavigate={onNavigate}
         />
         <OneNavItem
           text="About Me"
           delay={2}
           isActive={activeSection === "About Me"}
+          onNavigate={onNavigate}
         />
         <OneNavItem
           text="Skills"
           delay={3}
           isActive={activeSection === "Skills"}
+          onNavigate={onNavigate}
         />
         <OneNavItem
           text="Experience"
           delay={4}
           isActive={activeSection === "Experience"}
+          onNavigate={onNavigate}
+        />
+        <OneNavItem
+          text="Projects"
+          delay={5}
+          isActive={activeSection === "Projects"}
+          onNavigate={onNavigate}
         />
         <OneNavItem
           text="Contact Me"
-          delay={5}
+          delay={6}
           isActive={activeSection === "Contact Me"}
+          onNavigate={onNavigate}
         />
       </nav>
 
@@ -67,17 +87,22 @@ function OneNavItem({
   text,
   delay,
   isActive,
+  onNavigate,
 }: {
   text: string;
   delay?: number;
   isActive?: boolean;
+  onNavigate?: Dispatch<SetStateAction<string>>;
 }) {
   return (
     <motion.nav
       initial={{ x: 20 }}
       whileInView={{ x: 0 }}
       transition={{ duration: 0.3, ease: "easeIn", delay: delay * 0.1 }}
-      onClick={() => scrollIntoId(text)}
+      onClick={() => {
+        scrollIntoId(text);
+        onNavigate?.(text);
+      }}
       className={`flex h-[90%] cursor-pointer items-center justify-center rounded border-[0.5px] px-4 font-medium transition-all duration-150 ease-in hover:border-yellow hover:text-yellow ${isActive ? "border-yellow text-yellow" : "border-gray-200 text-gray-100"}`}
     >
       {text}

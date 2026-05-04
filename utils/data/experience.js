@@ -1,10 +1,22 @@
 export const experienceData = [
   {
+    title: "Software Engineer",
+    company: "Motivate Technologies",
+    location: "Remote, India",
+    type: "Full time",
+    duration: "Mar 2025 — Jan 2026",
+    description: [
+      "Designed and implemented a unified distance computation library to standardize calculations across multiple data sources (motion events, breadcrumbs, Bluetooth device data, driving periods, IFTA trips).",
+      "Migrated face recognition workflow from asynchronous processing to real-time matching, improving face match accuracy and reducing unidentified driver cases by 30%.",
+    ],
+    technologies: [],
+  },
+  {
     title: "Team Lead",
     company: "SalaryBox",
     location: "Gurugram, India",
     type: "Full time",
-    duration: "Mar 2024 — Dec 2024",
+    duration: "Sep 2023 — Mar 2025",
     description: [
       "Led cross-functional engineering team, managing sprint planning, task allocation, code reviews, and deployment processes.",
       "Re-architected attendance management system, introducing shifts,  breaks, attendance automation rules, and work schedule management, contributed to increased revenue through enhanced product offerings.",

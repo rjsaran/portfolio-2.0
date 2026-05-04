@@ -21,9 +21,10 @@ export default function Experience({
 }) {
   // Call the useIntersect hook and receive the setNode and entry variables
   const { entry, setNode } = useIntersect({
-    root: null, // The element used as the viewport for checking visibility, null means the browser viewport
-    rootMargin: "0px", // Margin around the root element (in pixels)
-    threshold: 0.5, // A threshold value between 0 and 1, indicating the percentage of the target element that should be visible before the callback is invoked
+    root: null,
+    rootMargin: "0px",
+    // Lower than other sections: Experience is tall, so 50% visible is often never reached while scrolling.
+    threshold: 0.2,
   });
 
   const observeRef = useRef(null);
@@ -36,7 +37,7 @@ export default function Experience({
     if (!!entry?.isIntersecting) {
       setIsVisible();
     }
-  }, [entry]);
+  }, [entry?.isIntersecting]);
 
   return (
     <section

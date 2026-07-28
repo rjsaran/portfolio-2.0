@@ -9,6 +9,7 @@ export interface IPersonalProject {
   url: string;
   iconUrl: string;
   description: string;
+  builtWith?: string[];
 }
 
 export default function PersonalProjects({
@@ -121,6 +122,11 @@ function ProjectCard({
               <p className="text-[14px] leading-relaxed tracking-tight text-gray-100 xl:text-[15px]">
                 {project.description}
               </p>
+              {project.builtWith && project.builtWith.length > 0 && (
+                <p className="text-[12px] italic tracking-tight text-gray-100/70">
+                  Built with {project.builtWith.join(", ")}
+                </p>
+              )}
             </div>
           </div>
         </div>

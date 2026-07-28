@@ -5,6 +5,7 @@ export const personalProjectsData = [
     iconUrl: "https://credbox.vercel.app/favicon.png",
     description:
       "Personal pool P2P loan manager — track peer-to-peer lending in one place.",
+    builtWith: ["Claude Code", "Cursor", "Google Gemini"],
   },
   {
     name: "JanMat",
@@ -14,11 +15,12 @@ export const personalProjectsData = [
       "Election management application with door-to-door campaign tools, residents data, support level tracking, and booth agent management.",
   },
   {
-    name: "Sports Adda",
-    url: "https://the-sports-adda.vercel.app/",
-    iconUrl: "https://the-sports-adda.vercel.app/favicon.ico",
+    name: "Sportik",
+    url: "https://www.sportik.in",
+    iconUrl: "https://www.sportik.in/favicon.ico",
     description:
-      "Tournament management app: teams, players, schedule, and fixtures.",
+      "Tournament management platform: teams, matches, groups, draws, player auctions, and sponsors.",
+    builtWith: ["Claude Code", "Cursor", "Google Gemini"],
   },
   {
     name: "JalKhata",
@@ -26,5 +28,14 @@ export const personalProjectsData = [
     iconUrl: "https://jalkhata.vercel.app/favicon.svg",
     description:
       "Water supply management for suppliers — inventory at the plant, customers, and in-transit stock in one place.",
+    builtWith: ["Claude Code", "Cursor", "Google Gemini"],
+  },
+  {
+    name: "Resume Copilot",
+    url: "https://resume-copilot-six.vercel.app/",
+    iconUrl: "https://resume-copilot-six.vercel.app/favicon.ico",
+    description:
+      "AI-powered job application assistant: match/ATS scoring against a job description, then tailored, ATS-friendly resumes rendered natively and exported to pixel-accurate PDF.",
+    builtWith: ["Claude Code", "Cursor", "Google Gemini"],
   },
 ];

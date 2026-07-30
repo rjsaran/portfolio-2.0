@@ -14,12 +14,14 @@ export default function ContactForm({
   receiveMessage,
   submitMessage,
   loading,
+  error,
 }: {
   receiveName: (name: string) => void;
   receiveEmail: (email: string) => void;
   receiveMessage: (message: string) => void;
   submitMessage: () => void;
   loading: boolean;
+  error?: string;
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -64,6 +66,7 @@ export default function ContactForm({
           receiveMessage(val);
         }}
       />
+      {error && <p className="text-sm text-red-400">{error}</p>}
       <motion.button
         onClick={(e) => submitForm(e)}
         transition={{ duration: 0.3, ease: "easeInOut" }}

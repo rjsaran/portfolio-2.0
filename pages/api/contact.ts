@@ -1,20 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-// Create and configure Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.GMAIL_PASSKEY,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// No custom domain is verified in Resend for this project, so this sends
+// from Resend's shared sandbox address. That's only deliverable to the
+// Resend account's own verified email — which is fine here, since this form
+// always sends to EMAIL_ADDRESS (the account owner). If a custom domain is
+// verified later, set FROM_EMAIL and this picks it up with no code change.
+const FROM_ADDRESS = process.env.FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>";
 
 // HTML email template
-const generateEmailTemplate = (name, email, userMessage) => `
+const generateEmailTemplate = (name: string, email: string, userMessage: string) => `
   <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; background-color: #f4f4f4;">
     <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
       <h2 style="color: #007BFF;">New Message Received</h2>
@@ -29,26 +26,24 @@ const generateEmailTemplate = (name, email, userMessage) => `
   </div>
 `;
 
-// Helper function to send an email via Nodemailer
-async function sendEmail(payload, message) {
+async function sendEmail(payload: { name: string; email: string; message: string }, message: string) {
   const { name, email, message: userMessage } = payload;
 
-  const mailOptions = {
-    from: "Portfolio",
-    to: process.env.EMAIL_ADDRESS,
+  const { error } = await resend.emails.send({
+    from: FROM_ADDRESS,
+    to: process.env.EMAIL_ADDRESS as string,
     subject: `New Message From ${name}`,
     text: message,
     html: generateEmailTemplate(name, email, userMessage),
     replyTo: email,
-  };
+  });
 
-  try {
-    await transporter.sendMail(mailOptions);
-    return true;
-  } catch (error) {
-    console.error("Error while sending email:", error.message);
+  if (error) {
+    console.error("Error while sending email:", error);
     return false;
   }
+
+  return true;
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -58,7 +53,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
 
-    // Send email
     const emailSuccess = await sendEmail(payload, message);
 
     if (emailSuccess) {
@@ -73,7 +67,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       message: "Failed to send message or email.",
     });
   } catch (error) {
-    console.error("API Error:", error.message);
+    console.error("API Error:", (error as Error).message);
 
     return res.json({
       success: false,

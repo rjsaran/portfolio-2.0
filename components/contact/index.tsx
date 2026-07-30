@@ -37,18 +37,28 @@ export default function ContactMe({
   });
 
   const [messageReceived, setMessageReceived] = useState("");
+  const [sendError, setSendError] = useState("");
 
   const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
     setLoading(true);
+    setSendError("");
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userInput),
       });
+      const data = await res.json();
       setLoading(false);
+
+      if (!res.ok || !data.success) {
+        setSendError(
+          data.message || "Something went wrong sending your message. Please try again.",
+        );
+        return;
+      }
 
       // clear form
       setUserInput({
@@ -59,6 +69,7 @@ export default function ContactMe({
       setMessageReceived(userInput.name);
     } catch (error) {
       setLoading(false);
+      setSendError("Something went wrong sending your message. Please try again.");
       console.log(error);
     }
   };
@@ -94,6 +105,7 @@ export default function ContactMe({
             sendMessage();
           }}
           loading={loading}
+          error={sendError}
         />
       )}
       <MobileSocials />
